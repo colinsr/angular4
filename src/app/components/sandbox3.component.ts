@@ -8,6 +8,7 @@ import { ICustomer } from '../interfaces/ICustomer'
 
 export class Sandbox3Component {
     customer: ICustomer
+    customers:ICustomer[]
 
     constructor(){
         this.customer = {
@@ -15,5 +16,18 @@ export class Sandbox3Component {
             name: 'Colin Detwiller',
             email:'colinsr@me.com'
         };
+
+        this.customers = [
+            {
+                id:2,
+                name: 'Lily Detwiller',
+                email:'colinsr@me.com'
+            },
+            {
+                id:3,
+                name: 'Sean Detwiller',
+                email:'colinsr@me.com'
+            }
+        ];
     }
 }
