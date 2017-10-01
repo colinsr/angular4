@@ -2,13 +2,12 @@ import { Component } from '@angular/core'
 
 @Component({
     selector: 'sandbox',
-    template: `<h1>Name is {{ name }} and is {{ age }} years old.</h1>
-              <h2>My name is {{ person.firstname }} {{ person.lastname }}.
-              <ul>
-                <li> {{ 'hello colin' }} </li>
-                <li> {{ showAge() }} </li>
-                <li> {{ 1+1 }} </li>
-              </ul>`
+    templateUrl: `./sandbox.component.html`,
+    styles: [`
+        .special{
+            color: green;
+        }
+    `]
 })
 
 export class SandboxComponent{

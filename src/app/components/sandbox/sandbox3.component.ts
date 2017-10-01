@@ -1,5 +1,5 @@
 import { Component } from '@angular/core'
-import { ICustomer } from '../interfaces/ICustomer'
+import { ICustomer } from '../../interfaces/ICustomer'
 
 @Component({
     selector: 'sandbox3',

@@ -2,7 +2,8 @@ import {Component} from '@angular/core'
 
 @Component ({
     selector: 'sandbox2',
-    template: `<h1>Hello {{ name }}</h1>`
+    templateUrl: `./sandbox2.component.html`,
+    styleUrls: ['./sandbox2.component.css']
 })
 
 export class Sandbox2Component{
