@@ -6,6 +6,9 @@ import { Component } from '@angular/core';
         <h3>Sandbox 7</h3>
         <h4 [class.special]="isSpecial">This is a binding</h4>
         <h4 [ngClass]="currentClasses">This is an ngClass binding</h4>
+        <br><p>this is sort of sandbox 8 but i'm getting sick of creating new sandboxes</p>
+        <div [style.font-size]="isSpecial ? 'x-large' : 'smaller'">Font size</div>
+        <div [ngStyle]="currentStyles">This is the special ngStyles</div>
     `,
     styles: [
         `
@@ -16,12 +19,21 @@ import { Component } from '@angular/core';
 })
 
 export class Sandbox7Component{
-    isSpecial:boolean = true;
-    canSave:boolean = true;
+    isSpecial:boolean = false;
+    canSave:boolean = false;
     currentClasses = {};
+
+    currentStyles = {};
+    setCurrentStyles(){
+        this.currentStyles = {
+            'font-style': this.canSave ? 'italic' : 'normal',
+            'font-size': this.isSpecial ? '30px' : '8px'
+        }
+    }
 
     constructor(){
         this.setCurrentClasses();
+        this.setCurrentStyles();
     }
 
     setCurrentClasses(){
