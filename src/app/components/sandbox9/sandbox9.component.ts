@@ -4,13 +4,14 @@ import { Component } from '@angular/core';
     selector: 'sandbox9',
     template: `
     <h3>hello sandbox9</h3>
-    <button (click)="fireEvent('colin')">fire</button>
+    <button id="btn" (click)="fireEvent($event,'colin')">fire</button>
     `
 })
 
 export class Sandbox9Component{
 
-    fireEvent(name){
+    fireEvent(e, name){
         console.log("hello, ", name);
+        console.log(e.target.id);
     }
 }
