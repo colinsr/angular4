@@ -25,12 +25,25 @@ import { Component } from '@angular/core';
     <div>
         <input type="text" (paste)="fireEvent($event)" placeholder="paste">
     </div>
+    <br><hr>
+    <h4>{{text}}</h4>
+    <div>
+        <input type="text" (keyup)="changeText($event)" placeholder="change text" value={{text}}>
+    </div>
     `
 })
 
 export class Sandbox11Component{
+    text:string = "hello";
+
+    changeText(e){
+        console.log(e);
+        this.text = e.target.value;
+
+    }
+
     fireEvent(e){
-        console.log(e.type)
+        console.log(e.type);
     }
     
 }
