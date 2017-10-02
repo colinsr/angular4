@@ -12,6 +12,7 @@ import { Sandbox7Component } from './components/sandbox7/sandbox7.component';
 import { Sandbox8Component } from './components/sandbox8/sandbox8.component';
 import { Sandbox9Component } from './components/sandbox9/sandbox9.component';
 import { Sandbox10Component } from './components/sandbox10/sandbox10.component';
+import { Sandbox11Component } from './components/sandbox11/sandbox11.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { Sandbox10Component } from './components/sandbox10/sandbox10.component';
     Sandbox7Component,
     Sandbox8Component,
     Sandbox9Component,
-    Sandbox10Component
+    Sandbox10Component,
+    Sandbox11Component
   ],
   imports: [
     BrowserModule
