@@ -16,6 +16,7 @@ export class Sandbox10Component{
     value:boolean = true;
 
     changeValue(){
-        this.value = false;
+        //this.value = false;
+        this.value = !this.value;
     }
 }
