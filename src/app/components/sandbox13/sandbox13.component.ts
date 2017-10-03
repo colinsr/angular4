@@ -25,6 +25,7 @@ export class Sandbox13Component{
     onSubmit(){
         console.log(this.name);
         this.users.push(this.name);
+        this.name = "";
     }
 }
 
