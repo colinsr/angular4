@@ -22,6 +22,11 @@ export class DataService{
         return this.users;
     }
 
+    addUser(user){
+        return this.http.post('http://jsonplaceholder.typicode.com/users', user)
+                        .map(res => res.json());
+    }
+
     getData(){
         this.data = new Observable(observer => {
             setTimeout(() => {

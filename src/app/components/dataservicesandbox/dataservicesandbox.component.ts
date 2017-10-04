@@ -10,6 +10,11 @@ export class DataservicesandboxComponent implements OnInit {
   users:string[];
   data:any[] = [];
   fakeUsers:any[];
+  user = {
+    name: '',
+    email: '',
+    phone: ''
+  }
 
   constructor(public dataService:DataService) {
     console.log(this.dataService.getUsers());
@@ -23,6 +28,13 @@ export class DataservicesandboxComponent implements OnInit {
       console.log(data);
       this.data.push(data);
     });
+  }
+
+  onSubmit(){
+    this.dataService.addUser(this.user).subscribe(user => {
+      console.log(user);
+      this.fakeUsers.unshift(user);
+    })
   }
 
   ngOnInit() {

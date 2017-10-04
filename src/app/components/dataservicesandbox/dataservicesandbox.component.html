@@ -10,6 +10,22 @@
 </ul>
 <br><hr>
 
+<form (submit)="onSubmit()">
+  <div class="form-group">
+    <label>Name</label>
+    <input type="text" class="form-control" [(ngModel)]="user.name" name="name">
+  </div>
+  <div class="form-group">
+    <label>Email</label>
+    <input type="text" class="form-control" [(ngModel)]="user.email" name="email">
+  </div>
+  <div class="form-group">
+    <label>Phone</label>
+    <input type="text" class="form-control" [(ngModel)]="user.phone" name="phone">
+  </div>
+  <input type="submit" class="btn btn-success" value="Submit">
+</form>
+<hr>
 <div *ngFor="let f of fakeUsers">
   <div class="well">
     <ul class="list-group">
