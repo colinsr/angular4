@@ -37,6 +37,17 @@ export class DataservicesandboxComponent implements OnInit {
     })
   }
 
+  onDeleteClick(id){
+    this.dataService.deleteUser(id).subscribe(res => {
+      for(let i =0;i < this.fakeUsers.length;i++){
+        console.log(this.fakeUsers[i]);
+        if(this.fakeUsers[i].id == id){
+          this.fakeUsers.splice(i,1);
+        }
+      }
+    });
+  }
+
   ngOnInit() {
   }
 
