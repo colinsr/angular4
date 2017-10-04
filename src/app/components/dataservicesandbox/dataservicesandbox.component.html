@@ -9,3 +9,14 @@
   <li class="list-group-item" *ngFor="let d of data">{{d}}</li>
 </ul>
 <br><hr>
+
+<div *ngFor="let f of fakeUsers">
+  <div class="well">
+    <ul class="list-group">
+      <li class="list-group-item">{{f.name}}</li>
+      <li class="list-group-item">{{f.email}}</li>
+      <li class="list-group-item">{{f.phone}}</li>     
+    </ul>
+  </div>
+</div>
+<br><hr>
