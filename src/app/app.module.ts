@@ -17,6 +17,8 @@ import { Sandbox11Component } from './components/sandbox11/sandbox11.component';
 import { Sandbox12Component } from './components/sandbox12/sandbox12.component';
 import { Sandbox13Component } from './components/sandbox13/sandbox13.component';
 import { Sandbox14Component } from './components/sandbox14/sandbox14.component';
+import { DataService }        from './services/data.service';
+import { DataservicesandboxComponent } from './components/dataservicesandbox/dataservicesandbox.component';
 
 @NgModule({
   declarations: [
@@ -34,13 +36,16 @@ import { Sandbox14Component } from './components/sandbox14/sandbox14.component';
     Sandbox11Component,
     Sandbox12Component,
     Sandbox13Component,
-    Sandbox14Component
+    Sandbox14Component,
+    DataservicesandboxComponent
   ],
   imports: [
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    DataService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
