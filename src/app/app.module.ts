@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { SandboxComponent } from './components/sandbox/sandbox.component';
@@ -20,6 +21,14 @@ import { Sandbox13Component } from './components/sandbox13/sandbox13.component';
 import { Sandbox14Component } from './components/sandbox14/sandbox14.component';
 import { DataService }        from './services/data.service';
 import { DataservicesandboxComponent } from './components/dataservicesandbox/dataservicesandbox.component';
+import { HomeComponent } from './components/home/home.component';
+import { AboutComponent } from './components/about/about.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+
+const appRoutes: Routes = [
+  { path:'',       component:HomeComponent  },
+  { path:'about',  component:AboutComponent }
+];
 
 @NgModule({
   declarations: [
@@ -38,12 +47,16 @@ import { DataservicesandboxComponent } from './components/dataservicesandbox/dat
     Sandbox12Component,
     Sandbox13Component,
     Sandbox14Component,
-    DataservicesandboxComponent
+    DataservicesandboxComponent,
+    HomeComponent,
+    AboutComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [
     DataService
