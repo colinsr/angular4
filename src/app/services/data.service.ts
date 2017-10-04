@@ -32,6 +32,12 @@ export class DataService{
                         .map(res => res.json());
     }
 
+    editUser(user){
+        return this.http.delete('http://jsonplaceholder.typicode.com/users/' + user.id, user)
+                        .map(res => res.json());
+    }
+
+
     getData(){
         this.data = new Observable(observer => {
             setTimeout(() => {

@@ -10,7 +10,7 @@
 </ul>
 <br><hr>
 
-<form (submit)="onSubmit()">
+<form (submit)="onSubmit(isEdit)">
   <div class="form-group">
     <label>Name</label>
     <input type="text" class="form-control" [(ngModel)]="user.name" name="name">
@@ -33,6 +33,7 @@
       <li class="list-group-item">{{f.email}}</li>
       <li class="list-group-item">{{f.phone}}</li>     
     </ul>
+    <button (click)="onEditClick(f)" class="btn btn-primary btn-sm">Update</button>   
     <button (click)="onDeleteClick(f.id)" class="btn btn-danger btn-sm">Delete</button>
     <br><br>
   </div>

@@ -13,8 +13,10 @@ export class DataservicesandboxComponent implements OnInit {
   user = {
     name: '',
     email: '',
-    phone: ''
+    phone: '',
+    id: ''
   }
+  isEdit:boolean = false;
 
   constructor(public dataService:DataService) {
     console.log(this.dataService.getUsers());
@@ -30,11 +32,28 @@ export class DataservicesandboxComponent implements OnInit {
     });
   }
 
-  onSubmit(){
-    this.dataService.addUser(this.user).subscribe(user => {
-      console.log(user);
-      this.fakeUsers.unshift(user);
-    })
+  onSubmit(isEdit){
+    if(isEdit){
+      this.dataService.editUser(this.user).subscribe(user => {
+        for(let i =0;i < this.fakeUsers.length;i++){
+          console.log(this.fakeUsers[i]);
+          if(this.fakeUsers[i].id == this.user.id){
+            this.fakeUsers.splice(i,1);
+          }
+        }
+        this.fakeUsers.unshift(this.user);
+      });
+    } else {
+      this.dataService.addUser(this.user).subscribe(user => {
+        console.log(user);
+        this.fakeUsers.unshift(user);
+      });
+    }
+  }
+
+  onEditClick(user){
+    this.isEdit = true;
+    this.user = user;
   }
 
   onDeleteClick(id){
